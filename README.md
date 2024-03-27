@@ -10,6 +10,20 @@ The analysis of these tests is broken down into three components:
 - Endpoint verification.
 - Conclusions.
 
+
+**Table of Contents**
+- [TECHNICAL TEST](#technical-test)
+  - [supporteng API analysis](#supporteng-api-analysis)
+    - [General recommendations](#general-recommendations)
+    - [Endpoints Verification](#endpoints-verification)
+      - [User creation](#user-creation)
+      - [Login](#login)
+      - [Get user](#get-user)
+      - [Transfer money](#transfer-money)
+      - [User report](#user-report)
+      - [Get all users](#get-all-users)
+    - [Conclusions](#conclusions)
+
 ##### GENERAL RECOMMENDATIONS
 The following general recommendations are provided to consistently improve the API:
 
@@ -22,13 +36,6 @@ The following general recommendations are provided to consistently improve the A
 - Store passwords using hash and salt functions, encrypting them for enhanced application security.
 
 - In certain situations, incorrect error messages have been observed. For example, in the "get user" endpoint, an "invalid token" error is generated, returned with a code of 400, although it should be 401 as it is an authentication error.
-
-
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
 
 
 ##### ENDPOINTS VERIFICATION
