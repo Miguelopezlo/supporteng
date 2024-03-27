@@ -67,6 +67,16 @@ func (c Users) Setup(a *app.App) error {
 			return
 		}
 
+		user, err := a.Users.FindBy(r.Context(), map[string]any{"username": nureq.Username})
+		if err != nil {
+			respond.Err(w, err)
+			return
+		}
+		if user != nil {
+			respond.JSON(w, 400, "Repeated username")
+			return
+		}
+
 		if len(nureq.Password) == 0 || len(nureq.Username) == 0 {
 			respond.JSON(w, 400, "Username/Password cannot be empty")
 			return
